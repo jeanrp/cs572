@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p style="font-weight:bold;">
+        1- Explain why do we want sometimes to use setImmediate insteadof using setTimeout?
+    </p>
+    <p style="width:50%;text-align:justify;">It depends on the order that you want to execute, because setImmediate is
+        going to be executed when the check
+        queue is executed, so they have different priority of executions, the setImmediate will be executed after the
+        setTimeout when is the first execution, but if the setImmediate is put to be executed at the same time after the
+        event loop is idle, the setImmediate will be executed first</p>
+    <p style="font-weight:bold;"> 2- Explain the difference between process.nextTick and setImmediate?</p>
+    <p style="width:50%;text-align:justify;">process.nextTick has more priority, because the nextTickQueue has more
+        priority of execution than the check queue, so process.nextTick is going to be executed before the setImmediate
+    </p>
+
+    <p style="font-weight:bold;"> 3- Name 10 core modules that Node provides by default.</p>
+    <p style="width:50%;text-align:justify;">
+        <ul>
+            <li>http</li>
+            <li>url</li>
+            <li>querystring</li>
+            <li>path</li>
+            <li>fs</li>
+            <li>util</li>
+            <li>console</li>
+            <li>stream</li>
+            <li>timers</li>
+            <li>v8</li>
+        </ul>
+    </p>
+
+
+
+</body>
+
+</html>
