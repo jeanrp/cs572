@@ -1,8 +1,7 @@
 const http = require('http');
 const { fork } = require('child_process');
 const { Subject } = require('rxjs');
-const qs = require('querystring');
-const url = require('url');
+const qs = require('querystring'); 
 
 const subject = new Subject();
 
@@ -11,14 +10,14 @@ subject.subscribe((serverObj) => {
     const childProcess = fork('process-chunk.js');
     childProcess.send(qs.parse(str));
 
-    childProcess.on('message', chunk => {
+    childProcess.on('message', chunk => {  
         serverObj.res.write(chunk.toString());
     });
 
     childProcess.on('exit', () => {
         serverObj.res.end();
     });
-})
+});
 
 http.createServer((req, res) => 
 {
