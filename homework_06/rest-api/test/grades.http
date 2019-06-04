@@ -1,0 +1,23 @@
+POST http://localhost:3000/ HTTP/1.1
+content-type: application/json
+
+
+{
+    "id": "20",
+    "name": "name 20",
+    "course": "course 20",
+    "grade": "grade 20"
+}
+
+###
+
+GET http://localhost:3000/ HTTP/1.1
+
+
+###
+
+GET http://localhost:3000/10 HTTP/1.1
+
+###
+
+DELETE http://localhost:3000/10 HTTP/1.1
