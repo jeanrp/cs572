@@ -28,6 +28,7 @@ router.get('/search/:q', async function (req, res, next) {
 router.get('/:id', async function (req, res, next) {
   try {
     let result = await lectureDao.getLectureById(req.params.id);
+    console.log(result);
     res.json(result);
   } catch (error) {
     let err = new Error("It was not possible to get the specified lecture");
@@ -50,7 +51,6 @@ router.post('/', express.json(), async function (req, res, next) {
 
 });
 
-
 router.delete('/:id', async function (req, res, next) {
   try {
     let result = await lectureDao.deleteLecture(req.params.id);
@@ -63,3 +63,4 @@ router.delete('/:id', async function (req, res, next) {
 });
 
 module.exports = router;
+

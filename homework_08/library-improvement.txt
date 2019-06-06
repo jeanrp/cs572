@@ -1,0 +1,8 @@
+I would use the following commands in order to improve the search when using the library system:
+
+db.collection('books').createIndex('tags': 1,'author': 1)
+db.collection('books').createIndex('title': 1)
+
+
+db.collection('students').createIndex('name');
+db.collection('students').createIndex('studentId');

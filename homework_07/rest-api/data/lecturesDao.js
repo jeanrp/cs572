@@ -1,30 +1,33 @@
-const util = require('util');
 const { ObjectID } = require('mongodb');
 
-let getLectureById = function (id, callback) {
-    DB.lectures.findOne({ _id: new ObjectID(id) }, callback);
+let getLectureById = function (id) {
+    return DB.lectures.findOne({ _id: new ObjectID(id) });
 }
 
-let getLectures = function (callback) {
-    return DB.lectures.find().toArray(callback);
+let getLectures = function () {
+    return DB.lectures.find().toArray();
 }
 
-let addLecture = function (lecture, callback) {
-    DB.lectures.insertOne(lecture, callback);
+let addLecture = function (lecture) {
+    return DB.lectures.insertOne(lecture);
 }
 
-let deleteLecture = function (id, callback) {
-    DB.lectures.deleteOne({ _id: new ObjectID(id) }, callback);
+let deleteLecture = function (id) {
+    return DB.lectures.deleteOne({ _id: new ObjectID(id) });
 }
 
-let getLectureByParam = function (param, callback) {
-    DB.lectures.find({ lecture: { $regex: param } }).toArray(callback);
+let getLectureByParam = function (param) {
+    return DB.lectures.find({ lecture: { $regex: param } }).toArray();
 }
 
 module.exports = {
-    getLectureById: util.promisify(getLectureById),
-    getLectures: util.promisify(getLectures),
-    getLectureByParam: util.promisify(getLectureByParam),
-    addLecture: util.promisify(addLecture),
-    deleteLecture: util.promisify(deleteLecture)
+    getLectureById: getLectureById,
+    getLectures: getLectures,
+    getLectureByParam: getLectureByParam,
+    addLecture: addLecture,
+    deleteLecture: deleteLecture
 }
+
+
+
+
