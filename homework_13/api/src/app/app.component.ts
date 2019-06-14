@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-root',
   template: `
-     <a [routerLink]="[ '/users' ]">Go to users</a>
+     <a [routerLink]="[ '/users' ]">Users</a>
      <router-outlet></router-outlet>
 
   `,

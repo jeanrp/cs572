@@ -5,7 +5,7 @@ import { BeforeUserDetailsGuard } from './before-user-details.guard';
 
 const MY_ROUTES: Routes = [
     { path: '', component: UsersComponent },    
-    { path: 'details/:uuid', component: UserDetailsComponent, canActivate:[BeforeUserDetailsGuard] },   
+    { path: ':uuid', component: UserDetailsComponent, canActivate:[BeforeUserDetailsGuard] },   
     { path: '**', redirectTo: '/' }
 ];
 

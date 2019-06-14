@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   template: `
        <ul>
          <li *ngFor="let data of (obs$ | async);let i = index">
-             {{ data.name.first }} <a [routerLink]="[ 'details', i ]">Details</a>
+             {{ data.name.first }} <a [routerLink]="[ i ]">Details</a>
          </li>
 
        </ul>
