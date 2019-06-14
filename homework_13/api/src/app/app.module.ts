@@ -6,12 +6,12 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule} from '@angular/common/http'
 import { DataService } from './data.service';
-import { RouterModule } from '@angular/router';
+import { ErrorComponent } from './error.component';
  
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, ErrorComponent
   ],
   imports: [
     BrowserModule, HttpClientModule, myRoutes

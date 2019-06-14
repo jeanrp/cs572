@@ -12,8 +12,7 @@ import { Observable } from 'rxjs';
 
        </ul>
 
-       
-       <router-outlet></router-outlet>
+        
   `,
   styles: []
 })
